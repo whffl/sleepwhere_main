@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SleepWhere</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="main.css">
 
     <style>
@@ -14,42 +15,80 @@
 </head>
 <body>
     <header>
-        <div id="black_box">
-                        <nav>
+<div id = "black_box">
+       
+        <nav>
+                <ul>
+                    <li>
+                        <a href="#">소개</a>
+                        <ul>
+                             <li><a href="https://lovekukwithhan.github.io/AboutUs/.">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/%EC%8A%AC%EB%A6%BD%EC%9B%A8%EC%96%B4-336860100443093/">찾아보기</a>
+                    </li>
+                    <li>
+                        <a href="#">사용가이드</a>			
+                    </li>
+                    <li>
+                        <a href="#">SDHS</a>
                             <ul>
-                                <li>
-                                    <a href="#">소개</a>
-                                    <ul>
-                                         <li><a href="#">About Us</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">찾아보기</a>
-                                </li>
-                                <li>
-                                    <a href="#">사용가이드</a>			
-                                </li>
-                                <li>
-                                    <a href="#">SDHS</a>
-                                        <ul>
-                                            <li><a href="#">Contact Us</a></li>
-                                            <li><a href="#">위치</a></li>
-                                        </ul>					                                        </li>
-                                </ul>
-                            </nav>
-            <img src="logo1.png" alt="logo1">
-        </div>
+                                <li><a href="https://whffl.github.io/sleepwhere_contact/">Contact Us</a></li>
+                                <li><a href="https://whffl.github.io/sleepwhere-api/">위치</a></li>
+                            </ul>					                                        </li>
+                    </ul>
+                </nav>
+<img src="logo1.png" alt="logo1">
+</div>
 
         <div id="main">
         <div id="img_slide">
-
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+
+
         <div id="main_right"><h3>Sleep Where ?!<br>Stay Here !</h3>
+        <a href = "#">
         <div id="button_myself"><p>CLICK</p></div>
+        </a>
         </div>
     </div>
 
 </header>
+
+
+<script>
+
+
+var img=$("#img_slide div");
+var cnt=0;
+var max=img.length-1;
+    
+setInterval(next,2000);
+
+function next(){
+    if(img.is(":animated")) return false;
+    $(img[cnt]).animate({"left":"-100%","opacity":0}).siblings().css({"left":"100%","opacity":0});
+    cnt++;
+    if(cnt>max)cnt=0;
+    $(img[cnt]).animate({"left":0,"opacity":1});
+}
+ function prev(){
+    if(img.is(":animated")) return false;
+    $(img[cnt]).animate({"left":"100%","opacity":0}).siblings().css({"left":"-100%","opacity":0});
+    cnt--;
+    if(cnt<0)cnt=max;
+    $(img[cnt]).animate({"left":0,"opacity":1});
+}
+$(img).on("click", next);
+$(img).on("click", prev);
+
+</script>
 
 
 </body>
