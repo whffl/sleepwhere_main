@@ -12,32 +12,34 @@
     background-color: black;
 }
 
-#img_slide{
-    width: 65%;
-    height: 850px;
-    float: left;
-    background-image: url("hotel1.jpg");
+#black_box:hover{
+    height: 200px;
+    transition: 0.9s;
+}
 
-    background-size: cover;
-    animation : slide 10s infinite;
-    /*width:100%;
-    height:400px;*/
+#black_box img{
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+    margin-top:-90px;
+}
+#black_box nav > ul > li{
+    display:inline-block;
+}
+
+#black_box nav ul li{
+color:black;
+font-size:22px;
+margin-top:2.5%;
+font-family: 'Nanum Gothic', sans-serif;
 }
 
 #main_right{
     width: 35%;
     height: 850px;
     float: right;
-    background-image: url(https://cdn.pixabay.com/photo/2016/08/02/07/45/the-polygon-1562743_960_720.jpg);
+    background-image: url(right.jpg);
 }
-
-@keyframes imgslide {
-    0 % {background-image: url(hotel1.jpg) center / cover;}
-    33 % {background-image: url(hotel2.jpg) center / cover;}
-    66 % {background-image: url(hotel3.jpg) center / cover;}
-    100 % {background-image: url(hotel4.jpg) center / cover;}
-}
-
 
 #main_right h3{
     font-family: 'Jaldi', sans-serif;
@@ -58,6 +60,7 @@
 
 #button_myself p{
     font-family: 'Coming Soon', cursive;
+    color:black;
     font-size:35px;
     text-align:center;
 }
@@ -65,6 +68,56 @@
 #button_myself:hover{
     background-color: #effbfd;
     transition:0.9s;
+}
+
+#black_box img{
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+    margin-top:-90px;
+}
+
+#img_slide{
+width: 65%;
+height: 850px;
+float: left;
+margin:auto;
+position:relative;
+overflow:hidden;
+z-index : 1;
+}
+
+#img_slide div
+{
+width:100%;
+height:100%;
+left:100%;
+position:absolute;
+}
+
+#img_slide div:nth-child(1){
+    left:0;
+    background: url(hotel1.jpg);
+    background-size: cover;
+}
+#img_slide div:nth-child(2){
+    background: url(hotel2.jpg);
+    background-size: cover;
+}
+
+#img_slide div:nth-child(3){
+    background: url(hotel3.jpg);
+    background-size: cover;
+}
+
+#img_slide div:nth-child(4){
+    background: url(hotel4.jpg);
+    background-size: cover;
+}
+
+#img_slide div:nth-child(5){
+    background: url(hotel5.jpg);
+    background-size: cover;
 }
 
 #black_box img{
